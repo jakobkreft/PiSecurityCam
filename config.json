@@ -1,0 +1,11 @@
+{
+    "recording_hours": {
+        "start": "07:00",
+        "end": "20:00"
+    },
+    "recording_enabled": true,
+    "video_duration": 1800,
+    "max_files": 300,
+    "camera_location": "/dev/video1",
+    "stop_script": false
+}
