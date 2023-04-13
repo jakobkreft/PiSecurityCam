@@ -20,8 +20,14 @@ The script uses a configuration file named `config.json` to control its behavior
 
 ## Usage
 
-To start the script, run python3 main.py. The script will run indefinitely until the stop_script configuration is set to true.
+To start the script, run `python3 seccam.py`. The script will run indefinitely until the stop_script configuration is set to true.
 Contributing
+
+To run the script in the background and keep it running after the terminal is closed, use the following command:
+
+`nohup python3 seccam.py >> logfile.log 2>&1 &`
+
+This redirects output to `logfile.log` and detaches the script from the terminal session. 
 
 If you find any issues or have suggestions for improvements, please open an issue or submit a pull request.
 ## License
