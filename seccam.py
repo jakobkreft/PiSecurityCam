@@ -49,7 +49,8 @@ while True:
     filepath = os.path.join("videos", filename)
 
     # Record video for specified duration with resolution 854x480 and frame rate of 5
-    os.system(f"ffmpeg -t {VIDEO_DURATION} -f v4l2 -video_size 854x480 -framerate 5 -i {CAMERA_LOCATION} {filepath}")
+    #os.system(f"ffmpeg -t {VIDEO_DURATION} -f v4l2 -video_size 854x480 -framerate 5 -i {CAMERA_LOCATION} {filepath}") # real speed of playback, but filesizes are larger
+    os.system(f"ffmpeg -t {VIDEO_DURATION} -f v4l2 -video_size 854x480 -framerate 5 -i {CAMERA_LOCATION} -vf 'setpts=0.1667*PTS' -r 30 {filepath}") # plays at 30fps so its a speed up and file sizes are smaller.
 
     # Remove oldest files if maximum number of files is exceeded
     files = sorted(os.listdir("videos"))
